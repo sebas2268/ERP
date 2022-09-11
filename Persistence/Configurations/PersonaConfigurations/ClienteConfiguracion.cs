@@ -35,10 +35,10 @@ namespace ERP.Persistence.Configurations
                 .HasColumnType("VARCHAR(10)");
 
             builder.Property(e => e.feregistro)
-                .HasColumnType("DATETIME(0)");
+                .HasColumnType("DATETIME");
 
             builder.Property(e => e.febaja)
-                .HasColumnType("DATETIME(0)");            
+                .HasColumnType("DATETIME");            
             
             builder.Property(e => e.cdusuario)
                 .HasColumnType("VARCHAR(150)");

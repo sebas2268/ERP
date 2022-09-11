@@ -7,7 +7,7 @@ namespace ERP.PersistenceSQL
     public class SqlContextFactory : IDesignTimeDbContextFactory<SqlERPDbContext>
     {
         private const string ConnectionStringName = "DBConnection";
-        private const string MigrationsAssembly = "PersistenceSQL";
+        private const string MigrationsAssembly = "ERP.PersistenceSQL";
 
         public SqlERPDbContext CreateDbContext(string[] args)
         {
