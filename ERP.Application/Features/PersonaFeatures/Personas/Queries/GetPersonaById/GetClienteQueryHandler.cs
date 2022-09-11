@@ -22,7 +22,7 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Queries.GetPersonaBy
 
         public async Task<PersonaDto> Handle(GetPersonaByIdQuery request, CancellationToken cancellationToken)
         {
-            var entity = _mapper.Map<PersonaDto>(await _repository.GetByIdAsync(request.Id));
+            var entity = _mapper.Map<PersonaDto>(await _repository.GetByIdAsync(request.Nmid));
             if (entity is null) throw new NotFoundException(ApplicationConstants.GeneralConstants.informacionNoEncontrada);
             return entity;
         }

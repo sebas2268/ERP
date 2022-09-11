@@ -5,7 +5,6 @@ using ERP.Application.Features.PersonaFeatures.Personas.Queries.GetPersonaByIden
 using ERP.Application.Features.PersonaFeatures.Personas.Queries.GetPersonas;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,10 +22,10 @@ namespace ERP.Api.Controllers
         }
 
         [MapToApiVersion("1.0")]
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id, CancellationToken ct)
+        [HttpGet("{nmid}")]
+        public async Task<IActionResult> Get(int nmid, CancellationToken ct)
         {
-            return Ok(await _mediator.Send(new GetPersonaByIdQuery(id), ct));
+            return Ok(await _mediator.Send(new GetPersonaByIdQuery(nmid), ct));
         }
 
         [HttpGet]

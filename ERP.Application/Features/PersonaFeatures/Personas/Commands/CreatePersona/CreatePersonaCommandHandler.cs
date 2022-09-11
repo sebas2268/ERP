@@ -27,6 +27,7 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.CreatePerso
 
             var entity = await _repository.AddAsync(_mapper.Map<Persona>(request));
             if (entity is null) throw new BadRequestException(ApplicationConstants.GeneralConstants.errorRegistrandoInformacion);
+            await _repository.Save();
             return (entity.nmid);
         }
     }

@@ -1,16 +1,15 @@
 ﻿using ERP.Domain.DTOs.PersonasDto;
 using MediatR;
-using System;
 
 namespace ERP.Application.Features.PersonaFeatures.Personas.Queries.GetPersonaById
 {
     public class GetPersonaByIdQuery : IRequest<PersonaDto>
     {
-        public Guid Id { get; set; }
+        public int Nmid { get; set; }
 
-        public GetPersonaByIdQuery(Guid id)
+        public GetPersonaByIdQuery(int nmid)
         {
-            Id = id;
+            Nmid = nmid;
         }
     }
 }

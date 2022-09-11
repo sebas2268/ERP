@@ -27,6 +27,7 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.UpdatePerso
 
             var entity = _repository.Update(persona);
             if (entity is null) throw new BadRequestException(ApplicationConstants.GeneralConstants.errorRegistrandoInformacion);
+            await _repository.Save();
             return await Task.FromResult(entity.nmid);
         }
     }
