@@ -22,7 +22,7 @@ namespace ERP.PersistenceSQL.Repositories.PacienteRepositories
                     .FirstOrDefault());
         }
 
-        public SqlERPDbContext SqlSeguridadSocialdDbContext
+        public SqlERPDbContext SqlERPDbContext
         {
             get { return _dbContext as SqlERPDbContext; }
         }

@@ -25,7 +25,7 @@ namespace ERP.PersistenceSQL.Repositories.PersonaRepositories
                     .FirstOrDefault());
         }
 
-        public SqlERPDbContext SqlSeguridadSocialdDbContext
+        public SqlERPDbContext SqlERPDbContext
         {
             get { return _dbContext as SqlERPDbContext; }
         }

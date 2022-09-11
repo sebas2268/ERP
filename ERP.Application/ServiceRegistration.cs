@@ -22,7 +22,6 @@ namespace ERP.Application
             services.AddMvc().AddFluentValidation();
             services.AddTransient<IMachineDateTime, MachineDateTime>();
         }
-
         public static void ConfigureExceptionHandler(this IApplicationBuilder app)
         {
             app.UseExceptionHandler(errorApp =>
