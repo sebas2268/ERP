@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "MovaltoSeguridadSocialAPI",
+      "defaultValue": "ERPAPI",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }

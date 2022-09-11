@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace MovaltoSeguridadSocial.Api.Config
+namespace ERP.Api.Config
 {
     public class SwaggerConfigureOptions : IConfigureOptions<SwaggerGenOptions>
     {
@@ -17,7 +17,7 @@ namespace MovaltoSeguridadSocial.Api.Config
             {
                 options.SwaggerDoc(desc.GroupName, new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "Movalto API",
+                    Title = "ERP API",
                     Version = desc.ApiVersion.ToString(),
                 });
             }

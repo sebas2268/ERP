@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 
 using Serilog;
 
-namespace MovaltoSeguridadSocial.Api
+namespace ERP.Api
 {
     public class Program
     {

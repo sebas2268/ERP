@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Api.Api.Config
+namespace ERP.Api.Config
 {
     public static class MediatrConfig
     {
