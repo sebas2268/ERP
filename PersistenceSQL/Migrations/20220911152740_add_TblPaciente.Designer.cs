@@ -4,14 +4,16 @@ using ERP.PersistenceSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ERP.PersistenceSQL.Migrations
 {
     [DbContext(typeof(SqlERPDbContext))]
-    partial class SqlERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220911152740_add_TblPaciente")]
+    partial class add_TblPaciente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,10 +40,10 @@ namespace ERP.PersistenceSQL.Migrations
                     b.Property<string>("dseps")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<DateTime?>("febaja")
+                    b.Property<DateTime>("febaja")
                         .HasColumnType("DATETIME");
 
-                    b.Property<DateTime?>("feregistro")
+                    b.Property<DateTime>("feregistro")
                         .HasColumnType("DATETIME");
 
                     b.Property<int>("nmid_medicotra")
@@ -51,9 +53,6 @@ namespace ERP.PersistenceSQL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("nmid");
-
-                    b.HasIndex("nmid_persona")
-                        .IsUnique();
 
                     b.ToTable("TblPaciente", "General");
                 });
@@ -100,19 +99,16 @@ namespace ERP.PersistenceSQL.Migrations
                     b.Property<string>("dsphoto")
                         .HasColumnType("VARCHAR(500)");
 
-                    b.Property<DateTime?>("febaja")
+                    b.Property<DateTime>("febaja")
                         .HasColumnType("DATETIME");
 
                     b.Property<DateTime>("fenacimiento")
                         .HasColumnType("DATE");
 
-                    b.Property<DateTime?>("feregistro")
+                    b.Property<DateTime>("feregistro")
                         .HasColumnType("DATETIME");
 
                     b.HasKey("nmid");
-
-                    b.HasIndex("cddocumento")
-                        .IsUnique();
 
                     b.ToTable("TblPersona", "General");
                 });

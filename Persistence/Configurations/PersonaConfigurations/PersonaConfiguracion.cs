@@ -17,6 +17,9 @@ namespace ERP.Persistence.Configurations
                 .IsRequired()
                 .HasColumnType("VARCHAR(20)");
 
+            builder.HasIndex(u => u.cddocumento)
+                .IsUnique();
+
             builder.Property(e => e.dsnombres)
                 .IsRequired()
                 .HasColumnType("VARCHAR(60)");
@@ -35,9 +38,11 @@ namespace ERP.Persistence.Configurations
                 .HasColumnType("VARCHAR(10)");
 
             builder.Property(e => e.feregistro)
+                .IsRequired(false)
                 .HasColumnType("DATETIME");
 
             builder.Property(e => e.febaja)
+                .IsRequired(false)
                 .HasColumnType("DATETIME");            
             
             builder.Property(e => e.cdusuario)

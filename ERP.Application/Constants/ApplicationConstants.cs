@@ -7,6 +7,11 @@
             public static readonly string personaExiste = $"La persona ya se encuentra segistrada";
         }
 
+        public static class PacienteConstants
+        {
+            public static readonly string pacienteExiste = $"El paciente ya se encuentra segistrado";
+        }
+
         public static class GeneralConstants
         {
             public static readonly string informacionNoEncontrada = $"No se encontró la información";

@@ -4,14 +4,16 @@ using ERP.PersistenceSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ERP.PersistenceSQL.Migrations
 {
     [DbContext(typeof(SqlERPDbContext))]
-    partial class SqlERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220911153830_upd_paciente_persona_Fechas_null")]
+    partial class upd_paciente_persona_Fechas_null
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,9 +53,6 @@ namespace ERP.PersistenceSQL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("nmid");
-
-                    b.HasIndex("nmid_persona")
-                        .IsUnique();
 
                     b.ToTable("TblPaciente", "General");
                 });
@@ -110,9 +109,6 @@ namespace ERP.PersistenceSQL.Migrations
                         .HasColumnType("DATETIME");
 
                     b.HasKey("nmid");
-
-                    b.HasIndex("cddocumento")
-                        .IsUnique();
 
                     b.ToTable("TblPersona", "General");
                 });
