@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ERP.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Api.Api.Config.MediatrConfig.SetupMediatr(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Setup mediatr to use command/query pattern and pipeline behaviors
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>
