@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Features\ClienteFeatures\Clientes\Queries\GetAllClientes\**" />
+    <Compile Remove="Features\PersonaFeatures\Personas\Queries\GetAllClientes\**" />
     <Compile Remove="Features\PoliticaDatosPersonales\**" />
-    <EmbeddedResource Remove="Features\ClienteFeatures\Clientes\Queries\GetAllClientes\**" />
+    <EmbeddedResource Remove="Features\PersonaFeatures\Personas\Queries\GetAllClientes\**" />
     <EmbeddedResource Remove="Features\PoliticaDatosPersonales\**" />
-    <None Remove="Features\ClienteFeatures\Clientes\Queries\GetAllClientes\**" />
+    <None Remove="Features\PersonaFeatures\Personas\Queries\GetAllClientes\**" />
     <None Remove="Features\PoliticaDatosPersonales\**" />
   </ItemGroup>
 
