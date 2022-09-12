@@ -12,6 +12,11 @@
             public static readonly string pacienteExiste = $"El paciente ya se encuentra segistrado";
         }
 
+        public static class MaestraConstants
+        {
+            public static readonly string maestraExiste = $"Ya existe maestro con el codigo ingresado";
+        }
+
         public static class GeneralConstants
         {
             public static readonly string informacionNoEncontrada = $"No se encontró la información";

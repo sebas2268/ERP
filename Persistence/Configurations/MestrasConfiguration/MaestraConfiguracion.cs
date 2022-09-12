@@ -15,12 +15,10 @@ namespace ERP.Persistence.Configurations.MestrasConfiguration
                 .IsRequired();
 
             builder.Property(e => e.cdmaestro)
-                .HasColumnType("VARCHAR(5)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(5)");
 
             builder.Property(e => e.dsmaestro)
-                .HasColumnType("VARCHAR(100)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(100)");
 
             builder.Property(e => e.feregistro)
                 .IsRequired(false)

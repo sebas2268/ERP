@@ -1,4 +1,4 @@
-﻿using ERP.Application.Features.PacienteFeatures.Pacientes.Commands.CreatePaciente;
+﻿using ERP.Application.Features.Maestras.DataMaestras.Commands.CreateMaestra;
 using ERP.Application.Features.PacienteFeatures.Pacientes.Queries.GetPacientes;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +25,7 @@ namespace ERP.Api.Controllers.Paciente
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreatePacienteCommand command)
+        public async Task<IActionResult> Post([FromBody] CreateMaestraCommand command)
         {
             return Ok(await _mediator.Send(command));
         }

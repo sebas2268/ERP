@@ -7,8 +7,10 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.CreatePerso
     {
         public string cddocumento { get; set; }
         public string dsnombres { get; set; }
-        public string? dsapellidos { get; set; }
         public DateTime fenacimiento { get; set; }
+
+        #nullable enable
+        public string? dsapellidos { get; set; }
         public string? cdtipo { get; set; }
         public string? cdgenero { get; set; }
         public DateTime? febaja { get; set; }
@@ -18,5 +20,6 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.CreatePerso
         public string? cdtelfono_fijo { get; set; }
         public string? cdtelefono_movil { get; set; }
         public string? dsemail { get; set; }
+        #nullable disable
     }
 }

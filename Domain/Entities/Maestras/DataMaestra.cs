@@ -3,8 +3,13 @@
 namespace ERP.Domain.Entities.Maestras
 {
     public class DataMaestra
-    {   
+    {
+    
         public string nmdato { get; set; }
+        public string nmmaestro { get; set; }
+        public Maestra Maestra { get; set; }
+
+    #nullable enable
         public string? cddato { get; set; }
         public string? dsdato { get; set; }
         public string? cddato1 { get; set; }
@@ -12,7 +17,6 @@ namespace ERP.Domain.Entities.Maestras
         public string? cddato3 { get; set; }
         public DateTime? feregistro { get; set; }
         public DateTime? febaja { get; set; }
-        public string nmmaestro { get; set; }
-        public Maestra Maestra { get; set; }
+
     }
 }
