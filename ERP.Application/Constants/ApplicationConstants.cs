@@ -2,10 +2,14 @@
 {
     public static class ApplicationConstants
     {
-        public static class ClienteConstants
+        public static class PersonaConstants
         {
-            public static readonly string clienteExiste = $"El cliente ya se encuentra segistrado";
-            public static readonly string conductorExiste = $"El conductor ya se encuentra segistrado";
+            public static readonly string personaExiste = $"La persona ya se encuentra segistrada";
+        }
+
+        public static class PacienteConstants
+        {
+            public static readonly string pacienteExiste = $"El paciente ya se encuentra segistrado";
         }
 
         public static class GeneralConstants

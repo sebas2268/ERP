@@ -10,8 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using MovaltoSeguridadSocial.Api.Config;
-using MovaltoSeguridadSocial.Api.Middlewares;
+using ERP.Api.Config;
+using ERP.Api.Middlewares;
 using ERP.PersistenceSQL;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -20,7 +20,7 @@ using System.IO;
 using System.Reflection;
 using ERP.PersistenceSQL.Filters;
 
-namespace MovaltoSeguridadSocial.Api
+namespace ERP.Api
 {
     public class Startup
     {
@@ -71,7 +71,7 @@ namespace MovaltoSeguridadSocial.Api
 
             services.AddApplicationLayer();
             services.AddScoped((System.Func<System.IServiceProvider, IERPDbContext>)(s => s.GetService<ERP.Persistence.SqlERPDbContext>()));
-            services.AddDbContext<ERP.PersistenceSQL.SqlERPDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("MovinfoConnection"), x => x.MigrationsAssembly("MovaltoSeguridadSocial.Api")));
+            services.AddDbContext<ERP.PersistenceSQL.SqlERPDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DBConnection"), x => x.MigrationsAssembly("ERP.Api")));
             services.AddPersistenceInfrastructure(_configuration);
 
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

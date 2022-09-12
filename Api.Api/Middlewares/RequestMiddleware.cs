@@ -1,4 +1,4 @@
-﻿using Api.Api.Model;
+﻿using ERP.Api.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Logging;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace MovaltoSeguridadSocial.Api.Middlewares
+namespace ERP.Api.Middlewares
 {
     public class RequestMiddleware
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Api.Api.Model
+namespace ERP.Api.Model
 {
     public class Log
     {

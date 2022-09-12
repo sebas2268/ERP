@@ -1,5 +1,6 @@
 ﻿using ERP.Application.Interfaces;
-using ERP.Domain.Entities.ClienteEntities;
+using ERP.Domain.Entities.PacienteEntities;
+using ERP.Domain.Entities.PersonaEntities;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -12,7 +13,8 @@ namespace ERP.Persistence
         {
         }
 
-        public DbSet<Cliente> TblCliente { get; set; }
+        public DbSet<Persona> TblPersona { get; set; }
+        public DbSet<Paciente> TblPaciente { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

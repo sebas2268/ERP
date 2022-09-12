@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>MovaltoSeguridadSocial.Api</name>
+        <name>ERP.Api</name>
     </assembly>
     <members>
-        <member name="M:MovaltoSeguridadSocial.Api.Config.MediatrConfig.SetupMediatr(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:ERP.Api.Config.MediatrConfig.SetupMediatr(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
                 Setup mediatr to use command/query pattern and pipeline behaviors
             </summary>
