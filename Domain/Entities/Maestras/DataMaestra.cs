@@ -13,5 +13,6 @@ namespace ERP.Domain.Entities.Maestras
         public string cddato3 { get; set; }
         public DateTime? feregistro { get; set; }
         public DateTime? febaja { get; set; }
+        public Maestra Maestra { get; set; }
     }
 }

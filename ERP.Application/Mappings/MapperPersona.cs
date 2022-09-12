@@ -14,7 +14,8 @@ namespace ERP.Application.Mappings
             var time = new MachineDateTime();
             CreateMap<Persona, PersonaDto>();
             CreateMap<CreatePersonaCommand, Persona>()
-                .ForMember(target => target.feregistro, opt => opt.MapFrom(source => time.CentralStandardTime));
+                .ForMember(target => target.feregistro, opt => opt.MapFrom(source => time.CentralStandardTime))
+                .ForAllMembers(opt => opt.Condition(src => src != null));
 
             CreateMap<Persona, UpdatePersonaCommand>();
             CreateMap<UpdatePersonaCommand, Persona>().ForMember(source => source.nmid, opt => opt.Ignore());

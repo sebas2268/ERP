@@ -32,8 +32,6 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.CreatePerso
             RuleFor(p => p.cdgenero)
                 .MaximumLength(10);
 
-            RuleFor(p => p.febaja);
-
             RuleFor(p => p.cdusuario)
                 .MaximumLength(150);
 

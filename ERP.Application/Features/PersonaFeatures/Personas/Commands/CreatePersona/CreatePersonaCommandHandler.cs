@@ -23,7 +23,7 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.CreatePerso
         public async Task<int> Handle(CreatePersonaCommand request, CancellationToken cancellationToken)
         {
             var persona = _repository.GetByIdentificacion(request.cddocumento);
-            if (persona is not null) throw new BadRequestException(ApplicationConstants.PacienteConstants.pacienteExiste);
+            if (persona is not null) throw new BadRequestException(ApplicationConstants.PersonaConstants.personaExiste);
 
             var entity = await _repository.AddAsync(_mapper.Map<Persona>(request));
             if (entity is null) throw new BadRequestException(ApplicationConstants.GeneralConstants.errorRegistrandoInformacion);

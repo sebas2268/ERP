@@ -45,6 +45,11 @@ namespace ERP.Persistence.Configurations.MestrasConfiguration
             builder.Property(e => e.febaja)
                 .IsRequired(false)
                 .HasColumnType("DATETIME");
+
+            //builder.HasOne(p => p.nmmaestro)
+            //    .WithMany(b => b.nmmaestro)
+            //    .HasForeignKey(p => p.nmid_persona)
+            //    .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
