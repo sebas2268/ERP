@@ -14,10 +14,6 @@ namespace ERP.Persistence.Configurations.MestrasConfiguration
                 .HasColumnType("VARCHAR(150)")
                 .IsRequired();
 
-            builder.Property(e => e.nmmaestro)
-                .HasColumnType("VARCHAR(50)")
-                .IsRequired();
-
             builder.Property(e => e.cddato)
                 .HasColumnType("VARCHAR(20)");
 

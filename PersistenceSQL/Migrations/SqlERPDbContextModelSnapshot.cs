@@ -24,9 +24,6 @@ namespace ERP.PersistenceSQL.Migrations
                     b.Property<string>("nmdato")
                         .HasColumnType("VARCHAR(150)");
 
-                    b.Property<string>("Maestranmmaestro")
-                        .HasColumnType("VARCHAR(50)");
-
                     b.Property<string>("cddato")
                         .HasColumnType("VARCHAR(20)");
 
@@ -49,12 +46,9 @@ namespace ERP.PersistenceSQL.Migrations
                         .HasColumnType("DATETIME");
 
                     b.Property<string>("nmmaestro")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("nmdato");
-
-                    b.HasIndex("Maestranmmaestro");
 
                     b.ToTable("TblDataMaestra", "Maestra");
                 });
@@ -181,16 +175,6 @@ namespace ERP.PersistenceSQL.Migrations
                     b.ToTable("TblPersona", "General");
                 });
 
-            modelBuilder.Entity("ERP.Domain.Entities.Maestras.DataMaestra", b =>
-                {
-                    b.HasOne("ERP.Domain.Entities.Maestras.Maestra", "Maestra")
-                        .WithMany("DataMaestra")
-                        .HasForeignKey("Maestranmmaestro")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Maestra");
-                });
-
             modelBuilder.Entity("ERP.Domain.Entities.PacienteEntities.Paciente", b =>
                 {
                     b.HasOne("ERP.Domain.Entities.PersonaEntities.Persona", "nmidMedicotra")
@@ -208,11 +192,6 @@ namespace ERP.PersistenceSQL.Migrations
                     b.Navigation("nmidMedicotra");
 
                     b.Navigation("nmidPersona");
-                });
-
-            modelBuilder.Entity("ERP.Domain.Entities.Maestras.Maestra", b =>
-                {
-                    b.Navigation("DataMaestra");
                 });
 
             modelBuilder.Entity("ERP.Domain.Entities.PersonaEntities.Persona", b =>

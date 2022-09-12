@@ -42,10 +42,10 @@ namespace ERP.PersistenceSQL.Migrations
                 schema: "Maestra",
                 table: "TblDataMaestra");
 
-            migrationBuilder.DropColumn(
-                name: "Maestranmmaestro",
-                schema: "Maestra",
-                table: "TblDataMaestra");
+            //migrationBuilder.DropColumn(
+            //    name: "Maestranmmaestro",
+            //    schema: "Maestra",
+            //    table: "TblDataMaestra");
         }
     }
 }

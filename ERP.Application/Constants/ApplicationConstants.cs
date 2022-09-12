@@ -15,6 +15,7 @@
         public static class MaestraConstants
         {
             public static readonly string maestraExiste = $"Ya existe maestro con el codigo ingresado";
+            public static readonly string dataMaestraExiste = $"Ya existe dato maestro con el codigo ingresado";
         }
 
         public static class GeneralConstants

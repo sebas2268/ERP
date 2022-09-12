@@ -22,8 +22,8 @@ namespace ERP.Application.Features.Maestras.DataMaestras.Commands.CreateMaestra
 
         public async Task<int> Handle(CreateMaestraCommand request, CancellationToken cancellationToken)
         {
-            var paciente = _repository.GetBynmmaestroMaestra(request.nmmaestro);
-            if (paciente is not null) throw new BadRequestException(ApplicationConstants.MaestraConstants.maestraExiste);
+            var maestra = _repository.GetBynmmaestroMaestra(request.nmmaestro);
+            if (maestra is not null) throw new BadRequestException(ApplicationConstants.MaestraConstants.maestraExiste);
 
             var entity = await _repository.AddAsync(_mapper.Map<Maestra>(request));
             if (entity is null) throw new BadRequestException(ApplicationConstants.GeneralConstants.errorRegistrandoInformacion);
