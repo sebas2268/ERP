@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERP.Domain.Entities.PersonaEntities;
+using System;
 
 namespace ERP.Domain.Entities.PacienteEntities
 {
@@ -13,5 +14,7 @@ namespace ERP.Domain.Entities.PacienteEntities
         public DateTime ? febaja { get; set; }
         public string cdusuario { get; set; }
         public string dscondicion { get; set; }
+        public Persona nmidPersona { get; set; }
+        public Persona nmidMedicotra { get; set; }
     }
 }

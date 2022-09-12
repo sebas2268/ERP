@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ERP.Domain.Entities.PacienteEntities;
+using System;
+using System.Collections.Generic;
 
 namespace ERP.Domain.Entities.PersonaEntities
 {
@@ -19,5 +21,7 @@ namespace ERP.Domain.Entities.PersonaEntities
         public string cdtelfono_fijo { get; set; }
         public string cdtelefono_movil { get; set; }
         public string dsemail { get; set; }
+        public ICollection<Paciente> nmid_persona { get; set; }
+        public ICollection<Paciente> nmid_medicotra { get; set; }
     }
 }

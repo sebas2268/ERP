@@ -41,6 +41,16 @@ namespace ERP.Persistence.Configurations.PacienteConfigurations
 
             builder.Property(e => e.dscondicion)
                 .HasColumnType("TEXT");
+
+            builder.HasOne(p => p.nmidPersona)
+                .WithMany(b => b.nmid_persona)
+                .HasForeignKey(p => p.nmid_persona)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(p => p.nmidMedicotra)
+                .WithMany(b => b.nmid_medicotra)
+                .HasForeignKey(p => p.nmid_medicotra)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -4,14 +4,16 @@ using ERP.PersistenceSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ERP.PersistenceSQL.Migrations
 {
     [DbContext(typeof(SqlERPDbContext))]
-    partial class SqlERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220912000559_add_FKs_Persona_paciente")]
+    partial class add_FKs_Persona_paciente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
