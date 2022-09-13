@@ -29,6 +29,5 @@ namespace ERP.Api.Controllers.Maestras.Maestra
         {
             return Ok(await _mediator.Send(command));
         }
-
     }
 }

@@ -1,5 +1,4 @@
-﻿using ERP.Application.Features.Maestras.DataMaestras.Commands.CreateMaestra;
-using ERP.Application.Features.PacienteFeatures.Pacientes.Commands.CreatePaciente;
+﻿using ERP.Application.Features.PacienteFeatures.Pacientes.Commands.CreatePaciente;
 using ERP.Application.Features.PacienteFeatures.Pacientes.Queries.GetPacientes;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
