@@ -22,8 +22,8 @@ namespace ERP.Application.Features.PacienteFeatures.Pacientes.Commands.CreatePac
 
         public async Task<int> Handle(CreatePacienteCommand request, CancellationToken cancellationToken)
         {
-            var paciente = _repository.GetByNmidPersona(request.nmid_persona);
-            if (paciente is not null) throw new BadRequestException(ApplicationConstants.PersonaConstants.personaExiste);
+            var paciente = _repository.GetByNmidPaciente(request.nmid_persona);
+            if (paciente is not null) throw new BadRequestException(ApplicationConstants.PacienteConstants.pacienteExiste);
 
             var entity = await _repository.AddAsync(_mapper.Map<Paciente>(request));
             if (entity is null) throw new BadRequestException(ApplicationConstants.GeneralConstants.errorRegistrandoInformacion);

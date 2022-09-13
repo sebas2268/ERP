@@ -14,29 +14,20 @@ namespace ERP.Persistence.Configurations.MestrasConfiguration
                 .HasColumnType("VARCHAR(150)")
                 .IsRequired();
 
-            builder.Property(e => e.nmmaestro)
-                .HasColumnType("VARCHAR(50)")
-                .IsRequired();
-
             builder.Property(e => e.cddato)
-                .HasColumnType("VARCHAR(20)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(20)");
 
             builder.Property(e => e.dsdato)
-                .HasColumnType("VARCHAR(100)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(100)");
 
             builder.Property(e => e.cddato1)
-                .HasColumnType("VARCHAR(100)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(100)");
 
             builder.Property(e => e.cddato2)
-                .HasColumnType("VARCHAR(100)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(100)");
 
             builder.Property(e => e.cddato3)
-                .HasColumnType("VARCHAR(100)")
-                .IsRequired();
+                .HasColumnType("VARCHAR(100)");
 
             builder.Property(e => e.feregistro)
                 .IsRequired(false)
@@ -45,11 +36,6 @@ namespace ERP.Persistence.Configurations.MestrasConfiguration
             builder.Property(e => e.febaja)
                 .IsRequired(false)
                 .HasColumnType("DATETIME");
-
-            //builder.HasOne(p => p.nmmaestro)
-            //    .WithMany(b => b.nmmaestro)
-            //    .HasForeignKey(p => p.nmid_persona)
-            //    .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

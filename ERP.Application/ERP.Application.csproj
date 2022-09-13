@@ -27,8 +27,4 @@
     <ProjectReference Include="..\Domain\ERP.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Maestras\DataMaestras\Commands\" />
-  </ItemGroup>
-
 </Project>

@@ -1,4 +1,5 @@
 ﻿using ERP.Application.Features.Maestras.DataMaestras.Queries.GetDataMaestra;
+using ERP.Application.Features.Maestras.Maestra_.Commands.CreateDataMaestra;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading;
@@ -23,5 +24,10 @@ namespace ERP.Api.Controllers.Maestras.Maestra
             return Ok(await _mediator.Send(new GetAllDataMaestraQuery(), ct));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] CreateDataMaestraCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }
     }
 }

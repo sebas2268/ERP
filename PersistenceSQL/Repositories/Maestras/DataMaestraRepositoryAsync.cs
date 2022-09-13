@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using ERP.Application.Interfaces.Repositories.Maestras;
+using ERP.Domain.DTOs.Maestras;
 using ERP.Domain.Entities.Maestras;
+using System.Linq;
 
 namespace ERP.PersistenceSQL.Repositories.Maestras
 {
@@ -11,6 +13,13 @@ namespace ERP.PersistenceSQL.Repositories.Maestras
             : base(dbContext)
         {
             _mapper = mapper;
+        }
+
+        public DataMaestraDto GetBynmdatoDataMaestra(string nmdato)
+        {
+            return _mapper.Map<DataMaestraDto>(_dbContext.TblDataMaestra
+                    .Where(a => a.nmdato == nmdato)
+                    .FirstOrDefault());
         }
 
         public SqlERPDbContext SqlERPDbContext

@@ -1,4 +1,5 @@
 ﻿using ERP.Application.Interfaces;
+using ERP.Domain.Entities.Maestras;
 using ERP.Domain.Entities.PacienteEntities;
 using ERP.Domain.Entities.PersonaEntities;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,8 @@ namespace ERP.Persistence
 
         public DbSet<Persona> TblPersona { get; set; }
         public DbSet<Paciente> TblPaciente { get; set; }
+        public DbSet<Maestra> TblMaestra { get; set; }
+        public DbSet<DataMaestra> TblDataMaestra { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

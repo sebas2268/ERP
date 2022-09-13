@@ -4,14 +4,16 @@ using ERP.PersistenceSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ERP.PersistenceSQL.Migrations
 {
     [DbContext(typeof(SqlERPDbContext))]
-    partial class SqlERPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220912174220_upd_maestra_dataMaestra_null_notNull")]
+    partial class upd_maestra_dataMaestra_null_notNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,6 +25,9 @@ namespace ERP.PersistenceSQL.Migrations
                 {
                     b.Property<string>("nmdato")
                         .HasColumnType("VARCHAR(150)");
+
+                    b.Property<string>("Maestranmmaestro")
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("cddato")
                         .HasColumnType("VARCHAR(20)");
@@ -46,9 +51,12 @@ namespace ERP.PersistenceSQL.Migrations
                         .HasColumnType("DATETIME");
 
                     b.Property<string>("nmmaestro")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
 
                     b.HasKey("nmdato");
+
+                    b.HasIndex("Maestranmmaestro");
 
                     b.ToTable("TblDataMaestra", "Maestra");
                 });
@@ -175,6 +183,16 @@ namespace ERP.PersistenceSQL.Migrations
                     b.ToTable("TblPersona", "General");
                 });
 
+            modelBuilder.Entity("ERP.Domain.Entities.Maestras.DataMaestra", b =>
+                {
+                    b.HasOne("ERP.Domain.Entities.Maestras.Maestra", "Maestra")
+                        .WithMany("DataMaestra")
+                        .HasForeignKey("Maestranmmaestro")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Maestra");
+                });
+
             modelBuilder.Entity("ERP.Domain.Entities.PacienteEntities.Paciente", b =>
                 {
                     b.HasOne("ERP.Domain.Entities.PersonaEntities.Persona", "nmidMedicotra")
@@ -192,6 +210,11 @@ namespace ERP.PersistenceSQL.Migrations
                     b.Navigation("nmidMedicotra");
 
                     b.Navigation("nmidPersona");
+                });
+
+            modelBuilder.Entity("ERP.Domain.Entities.Maestras.Maestra", b =>
+                {
+                    b.Navigation("DataMaestra");
                 });
 
             modelBuilder.Entity("ERP.Domain.Entities.PersonaEntities.Persona", b =>

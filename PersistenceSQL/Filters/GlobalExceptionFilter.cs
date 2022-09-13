@@ -64,34 +64,6 @@ namespace ERP.PersistenceSQL.Filters
                 context.ExceptionHandled = true;
                 probleDetails.Extensions.Add("errors", json);
             }
-
-            if (context.Exception.GetType() == typeof(SiesaException))
-            {
-                var exception = (SiesaException)context.Exception;
-
-                var validation = new
-                {
-                    Detail = exception.Message
-                };
-
-                var json = new
-                {
-                    errors = new[] { validation }
-                };
-
-                var probleDetails = new ProblemDetails
-                {
-                    Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1",
-                    Title = "One or more validation errors occurred.",
-                    Status = StatusCodes.Status406NotAcceptable,
-                    Detail = context.Exception.Message,
-                };
-
-                context.Result = new BadRequestObjectResult(probleDetails);
-                context.HttpContext.Response.StatusCode = StatusCodes.Status406NotAcceptable;
-                context.ExceptionHandled = true;
-                probleDetails.Extensions.Add("errors", json);
-            }
         }
     }
 }

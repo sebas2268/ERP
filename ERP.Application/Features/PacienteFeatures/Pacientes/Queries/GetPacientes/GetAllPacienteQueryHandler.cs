@@ -23,9 +23,9 @@ namespace ERP.Application.Features.PacienteFeatures.Pacientes.Queries.GetPacient
 
         public async Task<IEnumerable<PacienteDto>> Handle(GetAllPacienteQuery request, CancellationToken cancellationToken)
         {
-            var entity = _mapper.Map<IEnumerable<PacienteDto>>(await _repository.GetAllAsync());
+            var entity = _mapper.Map<IEnumerable<PacienteDto>>(_repository.GetPacientesDetalle());
             if (entity is null) throw new NotFoundException(ApplicationConstants.GeneralConstants.informacionNoEncontrada);
-            return entity;
+            return await Task.FromResult(entity);
         }
     }
 }

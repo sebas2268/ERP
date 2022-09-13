@@ -21,7 +21,7 @@ namespace ERP.Application.Features.PersonaFeatures.Personas.Commands.UpdatePerso
         }
 
         public async Task<int> Handle(UpdatePersonaCommand request, CancellationToken cancellationToken)
-        {
+            {
             var persona = _mapper.Map(request, _mapper.Map<Persona>(await _repository.GetByIdAsync(request.nmid)));
             if (persona is null) throw new NotFoundException(ApplicationConstants.GeneralConstants.informacionNoEncontrada);
 
